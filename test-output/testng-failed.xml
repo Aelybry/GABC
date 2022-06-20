@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Shopify]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Shopify(failed)">
+    <parameter name="inputsheetname" value="Input.xlsx"/>
+    <parameter name="testcaseName" value="BOSTC_Store"/>
+    <classes>
+      <class name="com.Shopify.testobjects.ShopifyTest">
+        <methods>
+          <include name="createOrder_BOSTC_Store"/>
+          <include name="openHomePage"/>
+          <include name="setUp"/>
+          <include name="getSuiteName"/>
+          <include name="setInputSheetName"/>
+        </methods>
+      </class> <!-- com.Shopify.testobjects.ShopifyTest -->
+    </classes>
+  </test> <!-- Shopify(failed) -->
+</suite> <!-- Failed suite [Shopify] -->
