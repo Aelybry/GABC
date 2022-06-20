@@ -67,6 +67,7 @@ public class HomePage {
 	@FindBy(xpath="//*[contains(text(),'Continue to payment') and @class=\"btn__content\"]")
 	public WebElement btn_continueToPayment;
 	
+	//select payment method
 	@FindBy(xpath="//*[contains(text(),'Cash on Delivery (COD)')]")
 	public WebElement btn_cashOnDelivery;
 	@FindBy(id="continue_button")
