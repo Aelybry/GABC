@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [GSP Regression - Deliveries]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Delivery Confirmation(failed)">
+    <parameter name="inputsheetname" value="gspRegressionSuite.xlsx"/>
+    <parameter name="testcaseName" value="deliveryConfirmation"/>
+    <classes>
+      <class name="com.GSP.testobjects.GSPRegressionSuiteTest">
+        <methods>
+          <include name="submitDeliveryConfirmation_good"/>
+          <include name="submitDeliveryConfirmation_blankAllFields"/>
+          <include name="submitDeliveryConfirmation_blankAWB"/>
+          <include name="openTransDeliveries"/>
+          <include name="submitDeliveryConfirmation_zeroQuantity"/>
+          <include name="submitDeliveryConfirmation_blankRemarks"/>
+          <include name="submitDeliveryConfirmation_tampered"/>
+          <include name="getSuiteName"/>
+          <include name="setInputSheetName"/>
+          <include name="deliveriesSearchWithResult"/>
+          <include name="submitDeliveryConfirmation_undelivered"/>
+          <include name="submitDeliveryConfirmation_blankForwarder"/>
+          <include name="submitDeliveryConfirmation_damaged"/>
+          <include name="deliveriesSearchNoResult"/>
+          <include name="logOutGSP"/>
+          <include name="successfulLogin"/>
+          <include name="setUp"/>
+          <include name="submitDeliveryConfirmation_soiled"/>
+          <include name="openDeliveryConfirmationScreen"/>
+          <include name="submitDeliveryConfirmation_invalidbarCode"/>
+        </methods>
+      </class> <!-- com.GSP.testobjects.GSPRegressionSuiteTest -->
+    </classes>
+  </test> <!-- Delivery Confirmation(failed) -->
+</suite> <!-- Failed suite [GSP Regression - Deliveries] -->

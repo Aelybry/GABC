@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [Training - Zero Out Input Sheet]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Training Order Creation - - Zero Out Input Sheet(failed)">
+    <classes>
+      <class name="com.Shopify.testobjects.TrainingOrderCreationTest">
+        <methods>
+          <include name="resetTrainingInputSheet"/>
+          <include name="setUp"/>
+          <include name="getSuiteName"/>
+          <include name="setInputSheetName"/>
+        </methods>
+      </class> <!-- com.Shopify.testobjects.TrainingOrderCreationTest -->
+    </classes>
+  </test> <!-- Training Order Creation - - Zero Out Input Sheet(failed) -->
+</suite> <!-- Failed suite [Training - Zero Out Input Sheet] -->

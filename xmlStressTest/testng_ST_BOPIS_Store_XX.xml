@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="StressTest" parallel="tests" thread-count="6">
+		
+	<test name="Shopify Create Oxygen BOPIS_Store Fulfilled" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="Input.xlsx" />
+		<parameter name="testcaseName" value="XX_BopisStore" />
+		<classes>
+			<class name="com.Shopify.testobjects.ShopifyTest">
+				<methods>
+					<include name="openLoginPage"/>	
+					<include name="createOrder_BOPIS_Store"/>																																			
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>	

@@ -3,7 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
+      <class name="com.Shopify.testobjects.GetBarangayLongLatTest"/>
       <class name="com.Shopify.testobjects.ShopifyTest"/>
+      <class name="com.Shopify.testobjects.TrainingOrderCreationTest"/>
+      <class name="com.Shopify.testobjects.SiteManagerTest"/>
       <class name="com.Shopify.core.BaseTest"/>
     </classes>
   </test> <!-- Test -->

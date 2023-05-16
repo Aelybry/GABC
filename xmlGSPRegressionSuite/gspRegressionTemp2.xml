@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GSP Regression - ND" parallel="tests" thread-count="6">	
+    <test name="No Document Delivery" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="gspRegressionSuite.xlsx" />
+		<parameter name="testcaseName" value="noDocumentDelivery" />
+		<classes>
+			<class name="com.GSP.testobjects.GSPRegressionSuiteTest">
+				<methods>
+					<!-- test Login functionality -->
+					<include name="invalidPasswordLogin"/>	
+					<include name="successfulLogin"/>	
+					
+					<!--test Transaction > Misrouted Delivery-->
+					<include name="cancelNDRequest"/>					
+					<include name="logOutGSP"/>																										
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>	

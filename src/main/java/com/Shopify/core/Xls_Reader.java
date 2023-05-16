@@ -37,7 +37,7 @@ public class Xls_Reader {
 			e.printStackTrace();
 		}
 	}
-
+	
 	// returns the row count in a sheet
 	public int getRowCount(String sheetName) {
 		int index = workbook.getSheetIndex(sheetName);
@@ -68,6 +68,7 @@ public class Xls_Reader {
 	}
 	
 	// returns the data from a cell
+	@SuppressWarnings("deprecation")
 	public String getCellData(String sheetName, int colNum, int rowNum) {
 		try {
 			if (rowNum <= 0)
@@ -114,7 +115,7 @@ public class Xls_Reader {
 		}
 	}
 
-	// find whether sheets exists
+	// find whether sheets exists 
 	public boolean isSheetExist(String sheetName) {
 		int index = workbook.getSheetIndex(sheetName);
 		if (index == -1) {

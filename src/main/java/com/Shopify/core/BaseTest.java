@@ -16,8 +16,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.GSP.pageobjects.GSPPage;
 import com.Shopify.pageobjects.HomePage;
 import com.Shopify.pageobjects.LoginPage;
+import com.Shopify.pageobjects.PaymongoPage;
+import com.Shopify.pageobjects.SiteManagerPage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.NetworkMode;
@@ -45,12 +48,14 @@ public class BaseTest {
 	public Date date;
 	static String currentPath = "";
 	public static String currentDataObjectsPath = "";
-	static String suiteFolderPath = "";
+	public static String suiteFolderPath = "";
 
 	// Variables for PageObjects
 	public LoginPage login;
 	public HomePage homePage;
-
+	public PaymongoPage payMongo;
+	public SiteManagerPage siteManagerPage;
+	public GSPPage gspPage;
 	// Constructor
 
 	public BaseTest() {
@@ -85,7 +90,8 @@ public class BaseTest {
 	}
 
 	public void getinputsheetname(String inputsheet) {
-		xl = new Xls_Reader(currentPath + "\\src\\test\\java\\com\\Shopify\\dataobjects\\" + inputsheet);
+		//dir of data source
+		xl = new Xls_Reader(currentPath + "\\src\\test\\java\\com\\dataobjects\\" + inputsheet);
 	}
 
 	@Parameters({ "inputsheetname" })
@@ -218,18 +224,27 @@ public class BaseTest {
 		driver = browser.startBrowser(logger, inputData.get("navigate").get("Browser").toString());
 		browser.navigate(logger, inputData.get("navigate").get("URL").toString());
 		driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS);
-		Browser.pause(logger, "3");
+//		Browser.pause(logger, "3");
 		Browser.waitForBrowserToLoadCompletely(driver);
+		initializePageFactory();
+	}
+	
+	public void navigateSM(ExtentTest logger) {
+		driver = browser.startBrowser(logger, inputData.get("navigate").get("Browser").toString());
+		browser.navigate(logger, inputData.get("navigate").get("URL").toString());
+		driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS);
 		initializePageFactory();
 	}
 
 	/**
 	 * Redirecting to Specified URL = login.do
 	 */
-	public void navigateToLogin(ExtentTest logger, WebDriver driver) {
-		browser.navigate(logger, inputData.get("navigate").get("URL").toString());
+	public void navigateResetTrainingInputSheet(ExtentTest logger) {
+		driver = browser.startBrowser(logger, "Chrome");
+		browser.navigate(logger, "file:///C:\\Workspace\\Shopify\\ResetInputSheet.html");
 		driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS);
 		Browser.waitForBrowserToLoadCompletely(driver);
+		initializePageFactory();
 	}
 
 	/**
@@ -238,11 +253,14 @@ public class BaseTest {
 	public void initializePageFactory() {
 		login = PageFactory.initElements(driver, LoginPage.class);
 		homePage = PageFactory.initElements(driver, HomePage.class);
+		payMongo = PageFactory.initElements(driver, PaymongoPage.class);
+		siteManagerPage = PageFactory.initElements(driver, SiteManagerPage.class);
+		gspPage = PageFactory.initElements(driver, GSPPage.class);
 		
 	}
 	
 //	@AfterTest
-	public void closeBrower() {
+	public void closeBrowser() {
 		driver.close();
 		driver.quit();
 	}

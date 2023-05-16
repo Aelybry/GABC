@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GSP Regression - Deliveries" parallel="tests" thread-count="6">	
+    <test name="Delivery Confirmation" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="gspRegressionSuite.xlsx" />
+		<parameter name="testcaseName" value="deliveryConfirmation" />
+		<classes>
+			<class name="com.GSP.testobjects.GSPRegressionSuiteTest">
+				<methods>
+					<!-- test Login functionality -->
+					<include name="invalidPasswordLogin"/>	
+					<include name="successfulLogin"/>	
+					
+					<!--test Transaction > Deliveries / Delivery Confirmation -->
+					<include name="openTransDeliveries"/>	
+					<include name="deliveriesSearchNoResult"/>	
+					<include name="deliveriesSearchWithResult"/>
+					<include name="openDeliveryConfirmationScreen"/>
+					<include name="submitDeliveryConfirmation_zeroQuantity"/>
+					<include name="submitDeliveryConfirmation_blankAllFields"/>
+					<include name="submitDeliveryConfirmation_invalidbarCode"/>
+					<include name="submitDeliveryConfirmation_blankAWB"/>
+					<include name="submitDeliveryConfirmation_blankRemarks"/>
+					<include name="submitDeliveryConfirmation_blankForwarder"/>
+					<include name="submitDeliveryConfirmation_good"/>
+					<include name="submitDeliveryConfirmation_tampered"/>
+					<include name="submitDeliveryConfirmation_damaged"/>
+					<include name="submitDeliveryConfirmation_soiled"/>
+					<include name="submitDeliveryConfirmation_undelivered"/>
+					
+					<include name="logOutGSP"/>																																	
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>	

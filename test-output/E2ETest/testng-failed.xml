@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [E2ETest]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Test Site Manager(failed)">
+    <parameter name="inputsheetname" value="siteManager.xlsx"/>
+    <parameter name="testcaseName" value="siteManager"/>
+    <classes>
+      <class name="com.Shopify.testobjects.SiteManagerTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="getSuiteName"/>
+          <include name="setInputSheetName"/>
+          <include name="inventoryAfterRemorsePeriod"/>
+        </methods>
+      </class> <!-- com.Shopify.testobjects.SiteManagerTest -->
+    </classes>
+  </test> <!-- Test Site Manager(failed) -->
+</suite> <!-- Failed suite [E2ETest] -->

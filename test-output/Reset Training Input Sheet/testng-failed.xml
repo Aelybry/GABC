@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [Reset Training Input Sheet]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Reset Training Input Sheet(failed)">
+    <classes>
+      <class name="com.Shopify.testobjects.TrainingOrderCreationTest">
+        <methods>
+          <include name="resetTrainingInputSheet"/>
+          <include name="setUp"/>
+          <include name="getSuiteName"/>
+          <include name="setInputSheetName"/>
+        </methods>
+      </class> <!-- com.Shopify.testobjects.TrainingOrderCreationTest -->
+    </classes>
+  </test> <!-- Reset Training Input Sheet(failed) -->
+</suite> <!-- Failed suite [Reset Training Input Sheet] -->

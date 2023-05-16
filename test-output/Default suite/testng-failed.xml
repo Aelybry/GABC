@@ -3,17 +3,47 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.Sample.testobjects.SampleTest">
+      <class name="com.GSP.testobjects.GSPRegressionSuiteTest">
         <methods>
-          <include name="blankEmailOrNumberLogIn"/>
-          <include name="logOut"/>
+          <include name="openTransMisroutedDelivery"/>
+          <include name="submitDeliveryConfirmation_good"/>
+          <include name="submitMRD_blankSSCCNumber"/>
+          <include name="mrdSearchNoResult"/>
+          <include name="submitMRD_invalidSSCCMoreThan18Digit"/>
+          <include name="openTransDeliveries"/>
+          <include name="submitDeliveryConfirmation_zeroQuantity"/>
+          <include name="submitDeliveryConfirmation_blankRemarks"/>
+          <include name="submitDeliveryConfirmation_tampered"/>
           <include name="setInputSheetName"/>
-          <include name="successfulLogIn"/>
-          <include name="setUp"/>
+          <include name="deliveriesSearchWithResult"/>
+          <include name="deliveriesSearchNoResult"/>
+          <include name="submitMRD_blankAllFields"/>
+          <include name="submitMRD_blankDestinationSite"/>
+          <include name="successfulLogin"/>
+          <include name="submitMRD_invalidSSCCLessThan18Digit"/>
+          <include name="submitDeliveryConfirmation_soiled"/>
+          <include name="openDeliveryConfirmationScreen"/>
+          <include name="mrdSearchWithResult"/>
+          <include name="submitDeliveryConfirmation_blankAllFields"/>
+          <include name="submitDeliveryConfirmation_blankAWB"/>
+          <include name="submitMRD_aaveConfirmRequest"/>
+          <include name="invalidPasswordLogin"/>
           <include name="getSuiteName"/>
-          <include name="AddToCart"/>
+          <include name="openTransNoDocumentDelivery"/>
+          <include name="submitMRD_blankDeliveryNumber"/>
+          <include name="submitDeliveryConfirmation_undelivered"/>
+          <include name="submitDeliveryConfirmation_blankForwarder"/>
+          <include name="submitDeliveryConfirmation_damaged"/>
+          <include name="submitMRD_emptyBarCode"/>
+          <include name="logOutGSP"/>
+          <include name="openCreateNewMRD"/>
+          <include name="setUp"/>
+          <include name="submitMRD_BarcodeEnteredBeforeDestinationSite"/>
+          <include name="submitMRD_mrdAlreadyExist"/>
+          <include name="submitDeliveryConfirmation_invalidbarCode"/>
+          <include name="submitMRD_BarcodeEnteredBeforeSSCC"/>
         </methods>
-      </class> <!-- com.Sample.testobjects.SampleTest -->
+      </class> <!-- com.GSP.testobjects.GSPRegressionSuiteTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

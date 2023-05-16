@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GetBrgyLongLat" parallel="tests" thread-count="6">
+		
+	<test name="Get baranagay Long Lat" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="Input_longlat.xlsx" />
+		<parameter name="testcaseName" value="longlat" />
+		<classes>
+			<class name="com.Shopify.testobjects.GetBarangayLongLat">
+				<methods>
+					<include name="getLongLat"/>																																			
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>	

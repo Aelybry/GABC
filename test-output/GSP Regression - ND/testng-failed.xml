@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [GSP Regression - ND]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="No Document Delivery(failed)">
+    <parameter name="inputsheetname" value="gspRegressionSuite.xlsx"/>
+    <parameter name="testcaseName" value="noDocumentDelivery"/>
+    <classes>
+      <class name="com.GSP.testobjects.GSPRegressionSuiteTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="getSuiteName"/>
+          <include name="setInputSheetName"/>
+          <include name="cancelNDRequest"/>
+        </methods>
+      </class> <!-- com.GSP.testobjects.GSPRegressionSuiteTest -->
+    </classes>
+  </test> <!-- No Document Delivery(failed) -->
+</suite> <!-- Failed suite [GSP Regression - ND] -->

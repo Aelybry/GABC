@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Shopify" parallel="tests" thread-count="6">
+
+	<test name="Shopify Create BOSTC_Store Fulfilled" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="Input.xlsx" />
+		<parameter name="testcaseName" value="BOSTC_Store" />
+		<classes>
+			<class name="com.Shopify.testobjects.ShopifyTest">
+				<methods>
+					<include name="openLoginPage"/>		
+					<include name="createOrder_BOSTC_Store"/>																																		
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Shopify Create BOSTC_WH Fulfilled" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="Input.xlsx" />
+		<parameter name="testcaseName" value="BOSTC_WH" />
+		<classes>
+			<class name="com.Shopify.testobjects.ShopifyTest">
+				<methods>
+					<include name="openLoginPage"/>		
+					<include name="createOrder_BOSTC_WH"/>																																		
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Shopify Create BOPIS_Store Fulfilled" preserve-order="true" enabled="false">
+		<parameter name="inputsheetname" value="Input.xlsx" />
+		<parameter name="testcaseName" value="BOPIS_Store" />
+		<classes>
+			<class name="com.Shopify.testobjects.ShopifyTest">
+				<methods>
+					<include name="openLoginPage"/>	
+					<include name="createOrder_BOPIS_Store"/>																																			
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Shopify Create BOPIS_WH Fulfilled" preserve-order="true" enabled="false">
+		<parameter name="inputsheetname" value="Input.xlsx" />
+		<parameter name="testcaseName" value="BOPIS_WH" />
+		<classes>
+			<class name="com.Shopify.testobjects.ShopifyTest">
+				<methods>
+					<include name="openLoginPage"/>	
+					<include name="createOrder_BOPIS_WH"/>																																			
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>	

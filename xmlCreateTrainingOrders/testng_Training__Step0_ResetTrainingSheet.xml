@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Reset Training Input Sheet" parallel="tests" thread-count="6">
+
+	<test name="Reset Training Input Sheet" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="trainingInput.xlsx" />
+		<parameter name="testcaseName" value="resettrainingsheet" />
+		<classes>
+			<class name="com.Shopify.testobjects.TrainingOrderCreationTest">
+				<methods>
+					<include name="resetTrainingInputSheet"/>																																		
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>	
+	

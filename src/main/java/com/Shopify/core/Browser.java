@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
@@ -22,6 +23,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * 
@@ -42,24 +45,40 @@ public class Browser {
 	public WebDriver startBrowser(ExtentTest logger, String browserName) {
 		try {
 			if (browserName.equalsIgnoreCase("chrome")) {
-
+						
 				System.setProperty("webdriver.chrome.driver", CHROMEDRIVER_PATH);
 				HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 				chromePrefs.put("profile.default_content_settings.popups", 0);
+				chromePrefs.put("credentials_enable_service", false);
+				chromePrefs.put("profile.password_manager_enabled", false);
 
 				ChromeOptions chromeOptions = new ChromeOptions();
-				chromeOptions.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+				
+				//set aprameters replceed the code below with webdrivermanager
+//				File binaryFile = new File("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+//			    if(binaryFile.exists()){
+//			        //binary file is in standard location
+//			    	chromeOptions.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+//			    }
+//			    else{
+//			        //binary file is not in standard location
+//			    	chromeOptions.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+//			    }
 				chromeOptions.setExperimentalOption("prefs", chromePrefs);
+				chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 				chromeOptions.addArguments("start-maximized");
 				chromeOptions.addArguments("mute-audio");
 				chromeOptions.addArguments("disable-extensions");
 				chromeOptions.addArguments("disable-gpu");
-				chromeOptions.addArguments("window-size=1280x1024");
+				chromeOptions.addArguments("window-size=1920x1080");
 				chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
 				chromeOptions.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.IGNORE);
 				chromeOptions.setAcceptInsecureCerts(true);
 				chromeOptions.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+				//setd setuheadless to true if you want to run the browser in an unattended environment without any visible UI
+				chromeOptions.setHeadless(false);
 				
+				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver(chromeOptions);
 
 				logger.log(LogStatus.PASS, "<b>Chrome </b>browser is started ");
@@ -110,8 +129,10 @@ public class Browser {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.elementToBeClickable(element));
+			System.out.println(element.getText() + " is now clickable");
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Unable to click " + element.getText());
 		}
 	}
 
@@ -126,6 +147,17 @@ public class Browser {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.visibilityOf(element));
+			System.out.println(element.getText() + " is now visible");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void shortWaitForElementIsVisible(ExtentTest logger, WebDriver driver, WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 3);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			System.out.println(element.getText() + " is now visible");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -176,6 +208,7 @@ public class Browser {
 		} else {
 			JavascriptExecutor executr = (JavascriptExecutor) driver;
 			executr.executeScript("arguments[0].click();", element);
+			System.out.println("JS Clicked: " + element);
 		}
 	}
 
@@ -217,12 +250,15 @@ public class Browser {
 	 */
 	public static void captureScreenShot(ExtentTest logger, WebDriver driver, String fileName) {
 		try {
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+//			executor.executeScript("document.body.style.zoom = '.75'");
+			
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			logger.log(LogStatus.PASS, "Screen shot taken");
 
-			FileUtils.copyFile(scrFile, new File(fileName));
+			FileUtils.copyFile(scrFile, new File(BaseTest.suiteFolderPath + "\\" + fileName + ".jpg"));
 
-			logger.log(LogStatus.INFO, "Screen shot Path : <b>" + fileName + "</b>");
+			logger.log(LogStatus.INFO, "Screen shot Path : <b>" + BaseTest.suiteFolderPath.replace("//Reports//", "\\Reports\\") + "\\" + fileName + ".jpg" + "</b>");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -345,8 +381,19 @@ public class Browser {
 	public static void waitForLoading(ExtentTest logger, WebDriver driver) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 60);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[contains(text(),'MuiCircularProgress')]")));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[contains(@class,'spinner')]")));
 			System.out.println("waitForLoading is finished");
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.log(LogStatus.FAIL, "Frame is not loaded completely");
+		}
+	}
+	
+	public static void waitForLoading(ExtentTest logger, WebDriver driver, WebElement We) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			wait.until(ExpectedConditions.invisibilityOf(We));
+			System.out.println("Wait for invisibility Of "+ We + " is finished");
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.log(LogStatus.FAIL, "Frame is not loaded completely");

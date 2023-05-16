@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [Training - P-BTQ SM SAN LAZARO]" guice-stage="DEVELOPMENT">
+  <test parallel="tests" name="Training Order Creation - P-BTQ SM SAN LAZARO(failed)">
+    <parameter name="inputsheetname" value="trainingInput.xlsx"/>
+    <parameter name="testcaseName" value="P-BTQ SM SAN LAZARO"/>
+    <classes>
+      <class name="com.Shopify.testobjects.TrainingOrderCreationTest">
+        <methods>
+          <include name="createTrainingOrders"/>
+          <include name="setUp"/>
+          <include name="getSuiteName"/>
+          <include name="setInputSheetName"/>
+        </methods>
+      </class> <!-- com.Shopify.testobjects.TrainingOrderCreationTest -->
+    </classes>
+  </test> <!-- Training Order Creation - P-BTQ SM SAN LAZARO(failed) -->
+</suite> <!-- Failed suite [Training - P-BTQ SM SAN LAZARO] -->

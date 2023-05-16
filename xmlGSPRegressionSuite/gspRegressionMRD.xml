@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GSP Regression - MRD" parallel="tests" thread-count="6">	
+    <test name="Misrouted Delivery" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="gspRegressionSuite.xlsx" />
+		<parameter name="testcaseName" value="misroutedDelivery" />
+		<classes>
+			<class name="com.GSP.testobjects.GSPRegressionSuiteTest">
+				<methods>
+					<!-- test Login functionality -->
+					<include name="invalidPasswordLogin"/>	
+					<include name="successfulLogin"/>	
+					
+					<!--test Transaction > Misrouted Delivery	-->
+					<include name="mrdSearchNoResult"/>	 	
+					<include name="mrdSearchWithResult"/>	
+					<include name="openTransMisroutedDelivery"/>	
+					<include name="openCreateNewMRD"/>	
+					<include name="submitMRD_blankAllFields"/>	
+					<include name="submitMRD_blankDeliveryNumber"/>	
+					<include name="submitMRD_blankSSCCNumber"/>
+					<include name="submitMRD_blankDestinationSite"/>
+					<include name="submitMRD_emptyBarCode"/>
+					<include name="submitMRD_invalidSSCCLessThan18Digit"/>											
+					<include name="submitMRD_invalidSSCCMoreThan18Digit"/>	
+					<include name="submitMRD_BarcodeEnteredBeforeSSCC"/>	
+					<include name="submitMRD_BarcodeEnteredBeforeDestinationSite"/>
+					<include name="submitMRD_saveConfirmRequest"/>
+					<include name="submitMRD_mrdAlreadyExist"/>	
+					<include name="cancelMRDRequest"/>	
+					<include name="submitMRD_reuseCanceledSSCC"/>	
+					
+					<include name="logOutGSP"/>																										
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>	

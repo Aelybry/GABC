@@ -31,6 +31,7 @@ public class Button {
 		try {
 			we.click();
 			logger.log(LogStatus.PASS, we + " Button is clicked");
+			System.out.println(" Click: " + we.getText());
 		} catch (Exception e) {
 			System.out.println(" Faield to click: " + we);
 		}

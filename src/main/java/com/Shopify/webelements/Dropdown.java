@@ -3,6 +3,7 @@ package com.Shopify.webelements;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -49,6 +50,27 @@ public class Dropdown {
 			select = new Select(we);
 			select.selectByVisibleText(text);
 			logger.log(LogStatus.PASS, "Selected value <b>" + text + "</b> from " + we + " dropdown");
+		}
+	}
+	
+	public void selectByPartOfTextIgnoreCase(ExtentTest logger, WebDriver driver, WebElement we, String fieldValue) {
+		//Select dropDown = new Select(driver.findElement(fieldId));
+		if (we == null) {
+			logger.log(LogStatus.FAIL, we + " Dropdown is NOT displayed");
+		} else {
+			int index = 0;
+			select = new Select(we);
+		    for (WebElement option : select.getOptions()) {
+		        if (option.getText().toLowerCase().contains(fieldValue.toLowerCase())) {
+		        	System.out.println(option.getText().toLowerCase() + " ✓ \'" + fieldValue.toLowerCase() + "\'");
+		            break;
+		        } else {
+		        	//System.out.println(option.getText().toLowerCase() + " x \'" + fieldValue.toLowerCase() + "\'");
+		        	index++;
+		        }
+		    }
+		    select.selectByIndex(index);
+		    logger.log(LogStatus.PASS, "Selected value <b>" + fieldValue + "</b> from " + we + " dropdown");
 		}
 	}
 	

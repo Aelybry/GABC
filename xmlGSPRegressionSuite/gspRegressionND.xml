@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GSP Regression - ND" parallel="tests" thread-count="6">	
+    <test name="No Document Delivery" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="gspRegressionSuite.xlsx" />
+		<parameter name="testcaseName" value="noDocumentDelivery" />
+		<classes>
+			<class name="com.GSP.testobjects.GSPRegressionSuiteTest">
+				<methods>
+					<!-- test Login functionality -->
+					<include name="invalidPasswordLogin"/>	
+					<include name="successfulLogin"/>	
+					
+					<!--test Transaction > Misrouted Delivery-->
+					<include name="ndSearchNoResult"/>	 	
+					<include name="ndSearchWithResult"/>	
+					<include name="openTransNoDocumentDelivery"/>	
+					<include name="openCreateNewND"/>	
+					<include name="submitND_blankAllFields"/>	
+					<include name="submitND_blankDeliveryNumber"/>	
+					<include name="submitND_blankSSCCNumber"/>
+					<include name="submitND_blankDestinationSite"/>
+					<include name="submitND_emptyBarCode"/>
+					<include name="submitND_invalidSSCCLessThan18Digit"/>											
+					<include name="submitND_invalidSSCCMoreThan18Digit"/>	
+					<include name="submitND_BarcodeEnteredBeforeSSCC"/>	
+					<include name="submitND_BarcodeEnteredBeforeDestinationSite"/>
+					<include name="submitND_saveConfirmRequest"/>
+					<include name="submitND_NDAlreadyExist"/>	
+					<include name="cancelNDRequest"/>	
+					<include name="submitND_reuseCanceledSSCC"/>	
+					
+					<include name="logOutGSP"/>																										
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>	

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Training - P-BTQ. ROBINSONS LAOAG" parallel="tests" thread-count="6">
+
+	<test name="Training Order Creation - P-BTQ. ROBINSONS LAOAG" preserve-order="true" enabled="true">
+		<parameter name="inputsheetname" value="trainingInput.xlsx" />
+		<parameter name="testcaseName" value="P-BTQ. ROBINSONS LAOAG" />
+		<classes>
+			<class name="com.Shopify.testobjects.TrainingOrderCreationTest">
+				<methods>
+					<include name="openLoginPage"/>		
+					<include name="createTrainingOrders"/>																																		
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>	
+	
