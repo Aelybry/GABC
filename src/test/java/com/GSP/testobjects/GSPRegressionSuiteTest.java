@@ -33,14 +33,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.Shopify.core.BaseTest;
-import com.Shopify.core.Browser;
-import com.Shopify.webelements.AlertsHandler;
-import com.Shopify.webelements.Button;
-import com.Shopify.webelements.Dropdown;
-import com.Shopify.webelements.Link;
-import com.Shopify.webelements.RadioButton;
-import com.Shopify.webelements.TextBox;
+import com.GABC.core.BaseTest;
+import com.GABC.core.Browser;
+import com.GABC.webelements.AlertsHandler;
+import com.GABC.webelements.Button;
+import com.GABC.webelements.Dropdown;
+import com.GABC.webelements.Link;
+import com.GABC.webelements.RadioButton;
+import com.GABC.webelements.TextBox;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -1753,6 +1753,7 @@ public class GSPRegressionSuiteTest extends BaseTest{
 			Button.getInstance().click(logger, gspPage.btn_searchDelivery);
 			
 			Browser.waitForBrowserToLoadCompletely(driver);
+			// find index of view button to click
 			for(int i=1; i<= driver.findElements(By.xpath(gspPage.lbl_badges)).size() ;i++) {
 				if(driver.findElement(By.xpath(gspPage.lbl_badges+"["+i+"]")).getText().equalsIgnoreCase("Ready")) {
 					System.out.println("Clicking Request @ Index : " + ((i+1)/2));

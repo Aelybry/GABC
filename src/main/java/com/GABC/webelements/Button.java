@@ -1,5 +1,6 @@
-package com.Shopify.webelements;
+package com.GABC.webelements;
 
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebElement;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -10,35 +11,36 @@ import com.relevantcodes.extentreports.LogStatus;
  * @author bryan.adante
  *
  */
-public class Link {
+public class Button {
 
-	private Link() {
+	private Button() {
 
 	}
 
-	private static class LinkSingleton {
-		private static Link INSTANCE = new Link();
+	private static class ButtonSingleton {
+		private static Button INSTANCE = new Button();
 	}
 
-	public static Link getInstance() {
-		System.out.println(LinkSingleton.INSTANCE);
-		return LinkSingleton.INSTANCE;
+	public static Button getInstance() {
+		System.out.println(ButtonSingleton.INSTANCE);
+		return ButtonSingleton.INSTANCE;
 	}
 
 	// ****Actions****
 	public void click(ExtentTest logger, WebElement we) {
-		if (we == null) {
-			logger.log(LogStatus.FAIL, we + " Link is NOT displayed");
-		} else {
+		try {
 			we.click();
-			logger.log(LogStatus.PASS, we + " Link is clicked");
+			logger.log(LogStatus.PASS, we + " Button is clicked");
+			System.out.println(" Click: " + we.getText());
+		} catch (Exception e) {
+			System.out.println(" Faield to click: " + we);
 		}
 	}
-	
+
 	public String getAttribute(ExtentTest logger, WebElement we, String attribute) {
 		String value = null;
 		if (we == null) {
-			logger.log(LogStatus.FAIL, we + " Link is NOT displayed");
+			logger.log(LogStatus.FAIL, we + " Button is NOT displayed");
 		} else {
 			value = we.getAttribute(attribute);
 		}
@@ -80,40 +82,40 @@ public class Link {
 
 	public void verifyDisplayed(ExtentTest logger, WebElement we) {
 		if (we == null) {
-			logger.log(LogStatus.FAIL, we + " Link is NOT displayed");
+			logger.log(LogStatus.FAIL, we + " Button is NOT displayed");
 		} else {
-			logger.log(LogStatus.PASS, we + " Link is displayed");
+			logger.log(LogStatus.PASS, we + " Button is displayed");
 		}
 	}
 
 	public void verifyNotDisplayed(ExtentTest logger, WebElement we) {
 		if (we == null) {
-			logger.log(LogStatus.PASS, we + " Link is NOT displayed");
+			logger.log(LogStatus.PASS, we + " Button is NOT displayed");
 		} else {
-			logger.log(LogStatus.FAIL, we + " Link is displayed");
+			logger.log(LogStatus.FAIL, we + " Button is displayed");
 		}
 	}
 
 	public void verifyTextContains(ExtentTest logger, WebElement we, String text) {
 		if (we == null) {
-			logger.log(LogStatus.FAIL, we + " Link is NOT displayed");
+			logger.log(LogStatus.FAIL, we + " Button is NOT displayed");
 		} else {
 			if (we.getText().contains(text)) {
-				logger.log(LogStatus.PASS, we + " Link text contains <b>" + text + "</b>");
+				logger.log(LogStatus.PASS, we + " Button text contains <b>" + text + "</b>");
 			} else {
-				logger.log(LogStatus.FAIL, we + " Link text NOT contains <b>" + text + "</b>");
+				logger.log(LogStatus.FAIL, we + " Button text NOT contains <b>" + text + "</b>");
 			}
 		}
 	}
 
 	public void verifyTextEquals(ExtentTest logger, WebElement we, String text) {
 		if (we == null) {
-			logger.log(LogStatus.FAIL, we + " Link is NOT displayed");
+			logger.log(LogStatus.FAIL, we + " Button is NOT displayed");
 		} else {
 			if (we.getText().equals(text)) {
-				logger.log(LogStatus.PASS, we + " Link text is equal to <b>" + text + "</b>");
+				logger.log(LogStatus.PASS, we + " Button text is equal to <b>" + text + "</b>");
 			} else {
-				logger.log(LogStatus.FAIL, we + " Link text is NOT equal to <b>" + text + "</b>");
+				logger.log(LogStatus.FAIL, we + " Button text is NOT equal to <b>" + text + "</b>");
 			}
 		}
 	}

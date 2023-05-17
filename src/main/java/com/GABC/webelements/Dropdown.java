@@ -1,4 +1,4 @@
-package com.Shopify.webelements;
+package com.GABC.webelements;
 
 import java.util.List;
 
