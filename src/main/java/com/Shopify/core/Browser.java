@@ -54,16 +54,6 @@ public class Browser {
 
 				ChromeOptions chromeOptions = new ChromeOptions();
 				
-				//set aprameters replceed the code below with webdrivermanager
-//				File binaryFile = new File("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-//			    if(binaryFile.exists()){
-//			        //binary file is in standard location
-//			    	chromeOptions.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-//			    }
-//			    else{
-//			        //binary file is not in standard location
-//			    	chromeOptions.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
-//			    }
 				chromeOptions.setExperimentalOption("prefs", chromePrefs);
 				chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 				chromeOptions.addArguments("start-maximized");
@@ -78,7 +68,9 @@ public class Browser {
 				//setd setuheadless to true if you want to run the browser in an unattended environment without any visible UI
 				chromeOptions.setHeadless(false);
 				
+				//This replaces or remove the dependency of downloading chromedriver
 				WebDriverManager.chromedriver().setup();
+				
 				driver = new ChromeDriver(chromeOptions);
 
 				logger.log(LogStatus.PASS, "<b>Chrome </b>browser is started ");
