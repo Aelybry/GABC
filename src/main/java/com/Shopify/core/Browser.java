@@ -68,7 +68,7 @@ public class Browser {
 				//setd setuheadless to true if you want to run the browser in an unattended environment without any visible UI
 				chromeOptions.setHeadless(false);
 				
-				//This replaces or remove the dependency of downloading chromedriver
+				//This removes the dependency of downloading chromedriver
 				WebDriverManager.chromedriver().setup();
 				
 				driver = new ChromeDriver(chromeOptions);
