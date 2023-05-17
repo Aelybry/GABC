@@ -1753,6 +1753,7 @@ public class GSPRegressionSuiteTest extends BaseTest{
 			Button.getInstance().click(logger, gspPage.btn_searchDelivery);
 			
 			Browser.waitForBrowserToLoadCompletely(driver);
+			// find index of view button to click
 			for(int i=1; i<= driver.findElements(By.xpath(gspPage.lbl_badges)).size() ;i++) {
 				if(driver.findElement(By.xpath(gspPage.lbl_badges+"["+i+"]")).getText().equalsIgnoreCase("Ready")) {
 					System.out.println("Clicking Request @ Index : " + ((i+1)/2));
