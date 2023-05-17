@@ -1,4 +1,4 @@
-package com.Shopify.core;
+package com.GABC.core;
 
 import java.io.File;
 import java.text.DateFormat;
@@ -16,11 +16,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.GABC.pageobjects.HomePage;
+import com.GABC.pageobjects.LoginPage;
+import com.GABC.pageobjects.PaymongoPage;
+import com.GABC.pageobjects.SiteManagerPage;
 import com.GSP.pageobjects.GSPPage;
-import com.Shopify.pageobjects.HomePage;
-import com.Shopify.pageobjects.LoginPage;
-import com.Shopify.pageobjects.PaymongoPage;
-import com.Shopify.pageobjects.SiteManagerPage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.NetworkMode;

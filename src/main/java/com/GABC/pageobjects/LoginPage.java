@@ -1,11 +1,11 @@
-package com.Shopify.pageobjects;
+package com.GABC.pageobjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.Shopify.core.Browser;
-import com.Shopify.webelements.Button;
-import com.Shopify.webelements.TextBox;
+import com.GABC.core.Browser;
+import com.GABC.webelements.Button;
+import com.GABC.webelements.TextBox;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 

@@ -1,4 +1,4 @@
-package com.Shopify.core;
+package com.GABC.core;
 
 import java.awt.Robot;
 import java.awt.Toolkit;

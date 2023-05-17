@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                    <span class="method-stats">4 methods, 4 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -105,31 +105,22 @@
                         <a href="#" panel-name="suite-GSP_Regression_-_MRD" title="com.GSP.testobjects.GSPRegressionSuiteTest" class="method navigator-link" hash-for-method="cancelMRDRequest">cancelMRDRequest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-GSP_Regression_-_MRD -->
-                  </li>
-                  <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-GSP_Regression_-_MRD" class="hide-methods passed suite-GSP_Regression_-_MRD"> (hide)</a> <!-- hide-methods passed suite-GSP_Regression_-_MRD -->
-                      <a href="#" panel-name="suite-GSP_Regression_-_MRD" class="show-methods passed suite-GSP_Regression_-_MRD"> (show)</a> <!-- show-methods passed suite-GSP_Regression_-_MRD -->
-                    </span>
-                    <div class="method-list-content passed suite-GSP_Regression_-_MRD">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-GSP_Regression_-_MRD" title="com.GSP.testobjects.GSPRegressionSuiteTest" class="method navigator-link" hash-for-method="invalidPasswordLogin">invalidPasswordLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-GSP_Regression_-_MRD" title="com.GSP.testobjects.GSPRegressionSuiteTest" class="method navigator-link" hash-for-method="logOutGSP">logOutGSP</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-GSP_Regression_-_MRD" title="com.GSP.testobjects.GSPRegressionSuiteTest" class="method navigator-link" hash-for-method="successfulLogin">successfulLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-GSP_Regression_-_MRD -->
+                    </div> <!-- method-list-content failed suite-GSP_Regression_-_MRD -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -162,19 +153,35 @@
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-GSP_Regression_-_MRD-class-failed -->
-          <div class="suite-GSP_Regression_-_MRD-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.GSP.testobjects.GSPRegressionSuiteTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="invalidPasswordLogin">
                   </a> <!-- invalidPasswordLogin -->
                   <span class="method-name">invalidPasswordLogin</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=113.0.5672.92)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ITSD-NB-029754&apos;, ip: &apos;192.168.126.160&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\029754\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63631}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8339b090ccff4fa09471e2d08608b83a
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:485)
+	at com.GABC.core.Browser.waitForBrowserToLoadCompletely(Browser.java:269)
+	at com.GABC.core.BaseTest.navigate(BaseTest.java:228)
+	at com.GSP.testobjects.GSPRegressionSuiteTest.invalidPasswordLogin(GSPRegressionSuiteTest.java:1928)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -182,6 +189,29 @@
                   <a name="logOutGSP">
                   </a> <!-- logOutGSP -->
                   <span class="method-name">logOutGSP</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=113.0.5672.92)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ITSD-NB-029754&apos;, ip: &apos;192.168.126.160&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\029754\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63631}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8339b090ccff4fa09471e2d08608b83a
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:438)
+	at com.GSP.testobjects.GSPRegressionSuiteTest.logOutGSP(GSPRegressionSuiteTest.java:1998)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -189,10 +219,18 @@
                   <a name="successfulLogin">
                   </a> <!-- successfulLogin -->
                   <span class="method-name">successfulLogin</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [pass] but found [fail]
+	at com.GSP.testobjects.GSPRegressionSuiteTest.successfulLogin(GSPRegressionSuiteTest.java:1972)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 19 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-GSP_Regression_-_MRD-class-passed -->
+          </div> <!-- suite-GSP_Regression_-_MRD-class-failed -->
         </div> <!-- panel GSP_Regression_-_MRD -->
         <div panel-name="test-xml-GSP_Regression_-_MRD" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -256,26 +294,26 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'cancelMRDRequest')
+data.setCell(0, 1, 'invalidPasswordLogin')
 data.setCell(0, 2, 'com.GSP.testobjects.GSPRegressionSuiteTest')
-data.setCell(0, 3, 12916);
+data.setCell(0, 3, 16223);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'invalidPasswordLogin')
+data.setCell(1, 1, 'successfulLogin')
 data.setCell(1, 2, 'com.GSP.testobjects.GSPRegressionSuiteTest')
-data.setCell(1, 3, 6021);
+data.setCell(1, 3, 164);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'logOutGSP')
+data.setCell(2, 1, 'cancelMRDRequest')
 data.setCell(2, 2, 'com.GSP.testobjects.GSPRegressionSuiteTest')
-data.setCell(2, 3, 5478);
+data.setCell(2, 3, 44);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'successfulLogin')
+data.setCell(3, 1, 'logOutGSP')
 data.setCell(3, 2, 'com.GSP.testobjects.GSPRegressionSuiteTest')
-data.setCell(3, 3, 4489);
+data.setCell(3, 3, 10);
 window.suiteTableData['GSP_Regression_-_MRD']= { tableData: data, tableDiv: 'times-div-GSP_Regression_-_MRD'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 28 seconds</span>
+              <span class="suite-total-time">Total running time: 16 seconds</span>
               <div id="times-div-GSP_Regression_-_MRD">
               </div> <!-- times-div-GSP_Regression_-_MRD -->
             </div> <!-- times-div -->
@@ -413,25 +451,31 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">setUp(misroutedDelivery, org.testng.TestRunner@5c33f1a9)</span>
-                <span class="method-start">458 ms</span>
+                <span class="method-start">488 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">invalidPasswordLogin</span>
-                <span class="method-start">560 ms</span>
+                <span class="method-start">587 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">successfulLogin</span>
-                <span class="method-start">6581 ms</span>
+                <span class="method-start">16813 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">cancelMRDRequest</span>
-                <span class="method-start">11072 ms</span>
+                <span class="method-start">16977 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">logOutGSP</span>
-                <span class="method-start">23991 ms</span>
+                <span class="method-start">17022 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

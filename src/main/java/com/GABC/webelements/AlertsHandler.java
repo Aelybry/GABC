@@ -1,4 +1,4 @@
-package com.Shopify.webelements;
+package com.GABC.webelements;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

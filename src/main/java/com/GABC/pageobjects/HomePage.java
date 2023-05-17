@@ -1,4 +1,4 @@
- package com.Shopify.pageobjects;
+ package com.GABC.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import com.Shopify.core.Browser;
-import com.Shopify.webelements.Button;
+import com.GABC.core.Browser;
+import com.GABC.webelements.Button;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 /**

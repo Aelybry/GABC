@@ -7,10 +7,13 @@
     <classes>
       <class name="com.GSP.testobjects.GSPRegressionSuiteTest">
         <methods>
-          <include name="cancelMRDRequest"/>
           <include name="setUp"/>
-          <include name="getSuiteName"/>
           <include name="setInputSheetName"/>
+          <include name="cancelMRDRequest"/>
+          <include name="logOutGSP"/>
+          <include name="invalidPasswordLogin"/>
+          <include name="successfulLogin"/>
+          <include name="getSuiteName"/>
         </methods>
       </class> <!-- com.GSP.testobjects.GSPRegressionSuiteTest -->
     </classes>

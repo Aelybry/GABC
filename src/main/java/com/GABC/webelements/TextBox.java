@@ -1,11 +1,11 @@
-package com.Shopify.webelements;
+package com.GABC.webelements;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import com.Shopify.core.Browser;
+import com.GABC.core.Browser;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 

@@ -1,4 +1,4 @@
-package com.Shopify.core;
+package com.GABC.core;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
