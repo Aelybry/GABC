@@ -53,6 +53,16 @@ public class Browser {
 				chromePrefs.put("profile.password_manager_enabled", false);
 
 				ChromeOptions chromeOptions = new ChromeOptions();
+//				//set aprameters
+//				File binaryFile = new File("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+//			    if(binaryFile.exists()){
+//			        //binary file is in standard location
+//			    	chromeOptions.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+//			    }
+//			    else{
+//			        //binary file is not in standard location
+//			    	chromeOptions.setBinary("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+//			    }
 				
 				chromeOptions.setExperimentalOption("prefs", chromePrefs);
 				chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
