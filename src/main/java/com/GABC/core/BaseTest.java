@@ -241,7 +241,7 @@ public class BaseTest {
 	 */
 	public void navigateResetTrainingInputSheet(ExtentTest logger) {
 		driver = browser.startBrowser(logger, "Chrome");
-		browser.navigate(logger, "file:///C:\\Workspace\\Shopify\\ResetInputSheet.html");
+		browser.navigate(logger, "file:///C:\\Workspace\\GABC\\ResetInputSheet.html");
 		driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS);
 		Browser.waitForBrowserToLoadCompletely(driver);
 		initializePageFactory();
