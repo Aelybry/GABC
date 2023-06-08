@@ -113,9 +113,9 @@ public class SiteManagerPage extends BaseTest {
 	@FindBy(xpath="(//*[@col-id='Quantity'])[2]")
 	public WebElement text_availableInventory;
 	
-	public String eomCleanupCountDir = "C:\\Workspace\\Shopify\\src\\test\\java\\com\\Shopify\\dataobjects\\ShippingOrders.xlsx";
-	public String smokeTestDir = "C:\\Workspace\\Shopify\\src\\test\\java\\com\\Shopify\\dataobjects\\SmokeTest.xlsx";
-	public String siteManagerDir = "C:\\Workspace\\Shopify\\src\\test\\java\\com\\Shopify\\dataobjects\\siteManager.xlsx";
+	public String eomCleanupCountDir = "C:\\Workspace\\GABC\\src\\test\\java\\com\\Shopify\\dataobjects\\ShippingOrders.xlsx";
+	public String smokeTestDir = "C:\\Workspace\\GABC\\src\\test\\java\\com\\Shopify\\dataobjects\\SmokeTest.xlsx";
+	public String siteManagerDir = "C:\\Workspace\\GABC\\src\\test\\java\\com\\Shopify\\dataobjects\\siteManager.xlsx";
 	public String automationEmail = "automation.goldenabc@gmail.com";
 	public String inventoryInfoEmptyCell = "//*[contains(text(),'--')]";
 	public String warehouseSiteID = "2137";
